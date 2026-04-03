@@ -103,9 +103,11 @@
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1800&q=80') center/cover no-repeat;
     transform: scale(1.08);
     animation: heroReveal 1.8s cubic-bezier(.23,1,.32,1) forwards;
+  }
+  .hero-bg img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
   }
   @keyframes heroReveal {
     from { transform: scale(1.15); opacity: .6; }
@@ -388,6 +390,11 @@
     .form-row { grid-template-columns: 1fr; }
     .filter-tabs { flex-wrap: wrap; }
   }
+  @media (pointer: coarse) {
+    body { cursor: auto; }
+    .cursor { display: none; }
+    .gallery-item, .btn-cta, .filter-btn, .btn-submit { cursor: pointer; }
+  }
 </style>
 </head>
 <body>
@@ -420,7 +427,13 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-bg" id="heroBg">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1400&auto=format&fit=crop&q=80" 
+         srcset="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop&q=75 800w,
+                 https://images.unsplash.com/photo-1519741497674-611481863552?w=1400&auto=format&fit=crop&q=80 1400w"
+         sizes="100vw" alt="Hero" crossorigin="anonymous"
+         onerror="this.src='https://picsum.photos/seed/wedding/1400/900'">
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Fotografia artystyczna · Warszawa</p>
@@ -453,42 +466,42 @@
   </div>
   <div class="gallery-grid" id="gallery">
     <!-- Śluby -->
-    <div class="gallery-item reveal" data-cat="sluby" data-src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=85" data-caption="Ślub / Ceremonia">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=75" alt="Ślub" loading="lazy">
+    <div class="gallery-item reveal" data-cat="sluby" data-src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&auto=format&fit=crop&q=85" data-caption="Ślub / Ceremonia">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=700&auto=format&fit=crop&q=75" alt="Ślub" crossorigin="anonymous" onerror="this.src='https://picsum.photos/seed/wed1/700/933'">
       <div class="gallery-overlay"><span class="gallery-overlay-icon">Otwórz</span></div>
     </div>
-    <div class="gallery-item reveal reveal-delay-1" data-cat="sluby" data-src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=1200&q=85" data-caption="Ślub / Para">
-      <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=800&q=75" alt="Para ślubna" loading="lazy">
+    <div class="gallery-item reveal reveal-delay-1" data-cat="sluby" data-src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=1200&auto=format&fit=crop&q=85" data-caption="Ślub / Para">
+      <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=700&auto=format&fit=crop&q=75" alt="Para ślubna" crossorigin="anonymous" onerror="this.src='https://picsum.photos/seed/wed2/700/933'">
       <div class="gallery-overlay"><span class="gallery-overlay-icon">Otwórz</span></div>
     </div>
-    <div class="gallery-item reveal reveal-delay-2" data-cat="sluby" data-src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=85" data-caption="Ślub / Detal">
-      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=75" alt="Detal ślubny" loading="lazy">
+    <div class="gallery-item reveal reveal-delay-2" data-cat="sluby" data-src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&auto=format&fit=crop&q=85" data-caption="Ślub / Detal">
+      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=700&auto=format&fit=crop&q=75" alt="Detal ślubny" crossorigin="anonymous" onerror="this.src='https://picsum.photos/seed/wed3/700/525'">
       <div class="gallery-overlay"><span class="gallery-overlay-icon">Otwórz</span></div>
     </div>
     <!-- Portrety -->
-    <div class="gallery-item reveal" data-cat="portrety" data-src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&q=85" data-caption="Portret / Studio">
-      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=75" alt="Portret" loading="lazy">
+    <div class="gallery-item reveal" data-cat="portrety" data-src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&auto=format&fit=crop&q=85" data-caption="Portret / Studio">
+      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&auto=format&fit=crop&q=75" alt="Portret" loading="lazy" crossorigin="anonymous" onerror="this.src='https://picsum.photos/seed/port1/700/933'">
       <div class="gallery-overlay"><span class="gallery-overlay-icon">Otwórz</span></div>
     </div>
-    <div class="gallery-item reveal reveal-delay-1" data-cat="portrety" data-src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&q=85" data-caption="Portret / Plener">
-      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=75" alt="Portret plenerowy" loading="lazy">
+    <div class="gallery-item reveal reveal-delay-1" data-cat="portrety" data-src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&auto=format&fit=crop&q=85" data-caption="Portret / Plener">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=700&auto=format&fit=crop&q=75" alt="Portret plenerowy" loading="lazy" crossorigin="anonymous" onerror="this.src='https://picsum.photos/seed/port2/700/933'">
       <div class="gallery-overlay"><span class="gallery-overlay-icon">Otwórz</span></div>
     </div>
-    <div class="gallery-item reveal reveal-delay-2" data-cat="portrety" data-src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1200&q=85" data-caption="Portret / Naturalny">
-      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=75" alt="Portret naturalny" loading="lazy">
+    <div class="gallery-item reveal reveal-delay-2" data-cat="portrety" data-src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1200&auto=format&fit=crop&q=85" data-caption="Portret / Naturalny">
+      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=700&auto=format&fit=crop&q=75" alt="Portret naturalny" loading="lazy" crossorigin="anonymous" onerror="this.src='https://picsum.photos/seed/port3/700/933'">
       <div class="gallery-overlay"><span class="gallery-overlay-icon">Otwórz</span></div>
     </div>
     <!-- Eventy -->
-    <div class="gallery-item reveal" data-cat="eventy" data-src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=85" data-caption="Event / Gala">
-      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=75" alt="Event" loading="lazy">
+    <div class="gallery-item reveal" data-cat="eventy" data-src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&auto=format&fit=crop&q=85" data-caption="Event / Gala">
+      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=700&auto=format&fit=crop&q=75" alt="Event" loading="lazy" crossorigin="anonymous" onerror="this.src='https://picsum.photos/seed/ev1/700/525'">
       <div class="gallery-overlay"><span class="gallery-overlay-icon">Otwórz</span></div>
     </div>
-    <div class="gallery-item reveal reveal-delay-1" data-cat="eventy" data-src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1200&q=85" data-caption="Event / Koncert">
-      <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=75" alt="Koncert" loading="lazy">
+    <div class="gallery-item reveal reveal-delay-1" data-cat="eventy" data-src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1200&auto=format&fit=crop&q=85" data-caption="Event / Koncert">
+      <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=700&auto=format&fit=crop&q=75" alt="Koncert" loading="lazy" crossorigin="anonymous" onerror="this.src='https://picsum.photos/seed/ev2/700/933'">
       <div class="gallery-overlay"><span class="gallery-overlay-icon">Otwórz</span></div>
     </div>
-    <div class="gallery-item reveal reveal-delay-2" data-cat="sluby" data-src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200&q=85" data-caption="Ślub / Wieczór">
-      <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=75" alt="Ślub wieczorny" loading="lazy">
+    <div class="gallery-item reveal reveal-delay-2" data-cat="sluby" data-src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200&auto=format&fit=crop&q=85" data-caption="Ślub / Wieczór">
+      <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=700&auto=format&fit=crop&q=75" alt="Ślub wieczorny" loading="lazy" crossorigin="anonymous" onerror="this.src='https://picsum.photos/seed/wed4/700/525'">
       <div class="gallery-overlay"><span class="gallery-overlay-icon">Otwórz</span></div>
     </div>
   </div>
@@ -507,7 +520,7 @@
 <section id="about">
   <div class="about-inner">
     <div class="about-image-wrap reveal">
-      <img src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=700&q=80" alt="Marta Kowalska — fotograf">
+      <img src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=700&auto=format&fit=crop&q=80" alt="Marta Kowalska — fotograf" crossorigin="anonymous" onerror="this.src='https://picsum.photos/seed/photographer/700/875'">
     </div>
     <div class="about-text reveal reveal-delay-1">
       <p class="section-label">O mnie</p>
